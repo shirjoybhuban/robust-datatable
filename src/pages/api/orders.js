@@ -12,7 +12,7 @@ export default function handler(req, res) {
 
 const getOrders = (page) => {
   let itemsPerPage = 10;
-  let currentPage = parseInt(page);
+  let currentPage = page ? parseInt(page) : 1;
   let orderSet = [];
   for (var i = 0; i < orderData.length; i++) {
     if (i >= (currentPage - 1) * itemsPerPage && i < currentPage * itemsPerPage) {
